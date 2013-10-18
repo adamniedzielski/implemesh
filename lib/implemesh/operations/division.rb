@@ -2,10 +2,10 @@ require 'implemesh/operations/basic_operation'
 
 module Implemesh
   module Operations
-    module Addition
+    module Division
 
       def self.perform(*args)
-        BasicOperation.perform(*args, -> (a, b) { a + b })
+        BasicOperation.perform(*args, -> (a, b) { a / b.to_f })
       end
     end
   end
