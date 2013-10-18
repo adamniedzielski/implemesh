@@ -4,12 +4,12 @@ module Implemesh
   module Generators
     class Sine
 
-      def generate
+      def generate(params = {})
         start_time = 0
         duration = 10.0
         frequency = 1000
-        amplitude = 1.0
-        period = 2 * Math::PI
+        amplitude = (params[:amplitude] || 1.0).to_f
+        period = (params[:period] || 2 * Math::PI).to_f
 
         signal = Implemesh::Signal.new
         signal.start_time = start_time
