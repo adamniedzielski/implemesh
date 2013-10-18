@@ -1,10 +1,10 @@
 require 'bindata'
-require_relative 'statistics/mean_value'
+require 'implemesh/statistics'
 
 module Implemesh
   class Signal
 
-    include Statistics::MeanValue
+    include Statistics
 
     attr_accessor :start_time
     attr_accessor :frequency
