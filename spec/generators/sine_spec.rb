@@ -3,7 +3,7 @@ require 'implemesh/generators/sine'
 
 describe Implemesh::Generators::Sine do
 
-  let(:sine_generator) { Implemesh::Generators::Sine.new }
+  let(:sine_generator) { Implemesh::Generators::Sine }
 
   it "returns signal" do
     expect(sine_generator.generate).to be_an_instance_of Implemesh::Signal
