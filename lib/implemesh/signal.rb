@@ -32,8 +32,8 @@ module Implemesh
     end
 
     class SignalRecord < BinData::Record
-      int32be :start_time
-      int32be :frequency
+      double_be :start_time
+      double_be :frequency
       array :samples, :type => :double_be, :read_until => :eof 
     end
   end
