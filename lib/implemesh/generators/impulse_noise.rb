@@ -9,7 +9,7 @@ module Implemesh
       DEFAULT_PROBABILITY = 0.5
 
       def self.generate(params = {})
-        probability = params[:probabilit] || DEFAULT_PROBABILITY
+        probability = params[:probability] || DEFAULT_PROBABILITY
 
         base = Implemesh::Generators::Base.new(params)
         base.generate -> (sample) do 
