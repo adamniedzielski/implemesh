@@ -31,6 +31,10 @@ module Implemesh
       self.samples = signal_record.samples.each_slice(2).to_a
     end
 
+    def real_samples
+      samples.map(&:first)
+    end
+
     class SignalRecord < BinData::Record
       double_be :start_time
       double_be :frequency
