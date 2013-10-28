@@ -3,11 +3,11 @@ module Implemesh
   module Operations
     module SincReconstruction
 
-      def self.perform(*args)
-        SincReconstruction.new(*args).perform
+      def self.perform(signal, params)
+        SincReconstruction.new(signal, params[:frequency], params[:window]).perform
       end
 
-      class SincReconstruction < Struct.new(:signal, :frequency)
+      class SincReconstruction < Struct.new(:signal, :frequency, :window)
 
         def perform
           calculate_ratio
@@ -36,7 +36,7 @@ module Implemesh
           def possible_range(sample)
             corresponding_sample = (sample / @ratio).round.to_i
             max_spread = [corresponding_sample, signal.samples.size - corresponding_sample - 1].min
-            spread = [10, max_spread].min
+            spread = [window.to_i, max_spread].min
             (corresponding_sample - spread .. corresponding_sample + spread)
           end
 

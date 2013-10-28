@@ -3,8 +3,8 @@ module Implemesh
   module Operations
     module ZeroOrderHoldReconstruction
 
-      def self.perform(*args)
-        ZeroOrderHoldReconstruction.new(*args).perform
+      def self.perform(signal, params)
+        ZeroOrderHoldReconstruction.new(signal, params[:frequency]).perform
       end
 
       class ZeroOrderHoldReconstruction < Struct.new(:signal, :frequency)

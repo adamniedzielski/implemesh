@@ -3,8 +3,8 @@ module Implemesh
   module Operations
     module Sampling
 
-      def self.perform(*args)
-        Sampling.new(*args).perform
+      def self.perform(signal, params)
+        Sampling.new(signal, params[:frequency]).perform
       end
 
       class Sampling < Struct.new(:signal, :frequency)

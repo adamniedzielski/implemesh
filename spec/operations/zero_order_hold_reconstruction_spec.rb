@@ -14,7 +14,7 @@ describe Implemesh::Operations::ZeroOrderHoldReconstruction do
   end
 
   it "creates sampled signal with desired frequency" do
-    result = reconstruction.perform(@signal, 1000)
+    result = reconstruction.perform(@signal, :frequency => 1000)
     expect(result.samples).to eq [[1, 2], [1, 2], [5, 6], [5, 6], [9, 10], [9, 10], [13, 14], [13, 14]]
   end
 end

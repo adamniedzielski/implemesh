@@ -14,7 +14,7 @@ describe Implemesh::Operations::Sampling do
   end
 
   it "creates sampled signal with desired frequency" do
-    result = sampling.perform(@signal, 500)
+    result = sampling.perform(@signal, :frequency => 500)
     expect(result.samples).to eq [[1, 2], [5, 6], [9, 10], [13, 14]]
   end
 end

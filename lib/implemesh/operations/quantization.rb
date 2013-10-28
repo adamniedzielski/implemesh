@@ -3,8 +3,8 @@ module Implemesh
   module Operations
     module Quantization
 
-      def self.perform(*args)
-        Quantization.new(*args).perform
+      def self.perform(signal, params)
+        Quantization.new(signal, params[:levels]).perform
       end
 
       class Quantization < Struct.new(:signal, :levels)

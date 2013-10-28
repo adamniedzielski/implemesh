@@ -14,7 +14,7 @@ describe Implemesh::Operations::Quantization do
   end
 
   it "creates quantized signal with desired number of quantization levels" do
-    result = quantization.perform(@signal, 2)
+    result = quantization.perform(@signal, :levels => 2)
     expect(result.samples).to eq [[1, 0], [1, 0], [8, 0], [8, 0], [8, 0], [8, 0], [1, 0], [1, 0]]
   end
 end
