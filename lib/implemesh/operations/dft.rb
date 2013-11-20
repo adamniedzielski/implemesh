@@ -1,6 +1,8 @@
 
 require 'complex'
 
+require 'implemesh/operations/transform'
+
 module Implemesh
   module Operations
     module DFT
@@ -10,17 +12,7 @@ module Implemesh
         DFT.new(signal, inverse).perform
       end
 
-      class DFT < Struct.new(:signal, :inverse)
-
-        attr_accessor :array
-
-        def perform
-          self.array = signal.samples
-
-          result = signal.dup
-          result.samples = proccess_array
-          result
-        end
+      class DFT < Transform
 
         def proccess_array
           sign = inverse ? 1 : -1
