@@ -20,6 +20,7 @@ module Implemesh
           apply_bit_reversal_order
 
           array.map! do |element|
+            element.map! { |f| f.to_f }
             Complex(*element)
           end
 
