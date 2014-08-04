@@ -1,29 +1,29 @@
 # Implemesh
 
-TODO: Write a gem description
+Simple gem for digital signal processing.
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-    gem 'implemesh'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install implemesh
+```
+gem build implemesh.gemspec
+gem install implemesh-0.0.1.gem
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+Inside ```irb```:
 
-## Contributing
+```ruby
+require 'implemesh'
+first_signal = Implemesh::Generators::Sine.generate
+second_signal = Implemesh::Generators::GaussianNoise.generate
+third_signal = Implemesh::Operations::Addition.perform(first_signal, second_signal)
+Implemesh::Comparators::MeanSquaredError.compare(first_signal, third_signal)
+first_signal.variance
+```
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+## Tests
+
+```
+rake
+```
